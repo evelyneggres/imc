@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMC</title>
+</head>
+<body>
+
+    <h1>Calculadora IMC</h1>
+
+    <img src="" alt="">
+
+    <p>IMC é a sigla para Índice de Massa Corpórea, parâmetro adotado pela Organização Mundial de Saúde para calcular o peso ideal de cada pessoa.O índice é calculado da seguinte maneira: divide-se o peso do paciente pela sua altura elevada ao quadrado.
+    <br>
+    Quer descobrir seu IMC? Insira seu peso e sua altura nos campos abaixo e compare com os índices da tabela.</p>
+
+    <div class="container">
+    <label for="peso">Peso (kg):</label>
+    <input type="number" id="peso" name="peso">
+
+    <br>
+
+    <label for="altura">Altura:</label>
+    <input type="number" id="altura" name="altura">
+
+    <br>
+
+    <button onclick="calcularImc()">Calcular</button>
+
+    <br>
+
+    <p>Seu índice de massa corporal é: <span id="resultado"></span></p>
+</div>
+
+
+<div class="tabela">
+    <ul class="price-box">
+        <li class="header">Tabela de Valores</li>
+        <li class="emph"> Menor do que 18,5 - Magreza</li>
+        <li>Entre 18,5 e 24,9 - Normal</li>
+        <li>Entre 25,0 e 29,9 - Sobrepeso</li>
+        <li>Entre 30,0 e 39,9 - Obesidade</li>
+        <li>Maior que 40,0 - Obesidade extrema</li>
+    </ul>
+</div>
+
+<footer>
+    Calculadora de ìndice de massa corporal feito por Evelyn Eggres
+</footer>
+
+
+    <script>
+
+        function calcularImc() {
+            const peso = document.getElementById("peso").value;
+            const altura = document.getElementById ("altura").value;
+            const imc = peso / (altura**2);
+            document.getElementById("resultado").textContent = imc.toFixed(2);
+
+        }
+
+        let tituloDinamico = document.title;
+        window.addEventListener("blur", () =>{
+            document.title = "Volte, está aberto!"
+        });
+
+        window.addEventListener("focus", () => {
+            document.title = tituloDinamico
+        })
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+</body>
+</html>
